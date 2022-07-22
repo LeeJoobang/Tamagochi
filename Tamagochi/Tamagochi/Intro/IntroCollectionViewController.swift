@@ -2,10 +2,55 @@ import UIKit
 
 class IntroCollectionViewController: UICollectionViewController {
 
+    var tamagochiList = TamagochiInfo()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "다마고치 선택하기"
+        layout()
+    }
+    
+    func layout(){
         self.collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 8
+        let width = UIScreen.main.bounds.width - (spacing * 4)
+        
+        layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.3)
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        
+        layout.minimumLineSpacing = CGFloat(spacing)
+        layout.minimumInteritemSpacing = spacing
+
+        collectionView.collectionViewLayout = layout
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroCollectionViewCell.identifier, for: indexPath) as! IntroCollectionViewCell
+        
+        if indexPath.row <= 2 {
+            let data = tamagochiList.tamagochi[indexPath.row]
+            let count = indexPath.row + 1
+            cell.configureInfo(data: data)
+            cell.tamaImageView.image = UIImage(named: "\(count)-6")
+            
+        } else {
+            cell.tamaImageView.image = UIImage(named: "noImage")
+            cell.tamaName.text = "준비중이예요."
+            cell.tamaName.font = .boldSystemFont(ofSize: 11)
+            cell.tamaName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+            
+        }
+        
+
+        return cell
+  
     }
 }
