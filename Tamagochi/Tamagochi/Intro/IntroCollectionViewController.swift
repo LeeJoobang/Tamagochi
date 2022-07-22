@@ -17,7 +17,7 @@ class IntroCollectionViewController: UICollectionViewController {
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width - (spacing * 4)
         
-        layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.3)
+        layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.2)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         
@@ -44,12 +44,14 @@ class IntroCollectionViewController: UICollectionViewController {
         } else {
             cell.tamaImageView.image = UIImage(named: "noImage")
             cell.tamaName.text = "준비중이예요."
-            cell.tamaName.font = .boldSystemFont(ofSize: 11)
+            cell.tamaName.font = .boldSystemFont(ofSize: 13)
             cell.tamaName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-            
-        }
-        
+            cell.tamaName.layer.borderWidth = 0.5
+            cell.tamaName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+            cell.tamaName.layer.cornerRadius = 5
+            cell.tamaName.adjustsFontSizeToFitWidth = true
 
+        }
         return cell
   
     }
