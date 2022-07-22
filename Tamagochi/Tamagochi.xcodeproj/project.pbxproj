@@ -14,6 +14,7 @@
 		37DACF7C288A8DB300897674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DACF7B288A8DB300897674 /* Assets.xcassets */; };
 		37DACF7F288A8DB300897674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37DACF7D288A8DB300897674 /* LaunchScreen.storyboard */; };
 		37DACF88288A916700897674 /* IntroCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF87288A916700897674 /* IntroCollectionViewController.swift */; };
+		37DACF8A288A923300897674 /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF89288A923300897674 /* IntroCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		37DACF7E288A8DB300897674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37DACF80288A8DB300897674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37DACF87288A916700897674 /* IntroCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewController.swift; sourceTree = "<group>"; };
+		37DACF89288A923300897674 /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				37DACF78288A8DB200897674 /* Intro.storyboard */,
 				37DACF87288A916700897674 /* IntroCollectionViewController.swift */,
+				37DACF89288A923300897674 /* IntroCollectionViewCell.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DACF8A288A923300897674 /* IntroCollectionViewCell.swift in Sources */,
 				37DACF77288A8DB200897674 /* ViewController.swift in Sources */,
 				37DACF88288A916700897674 /* IntroCollectionViewController.swift in Sources */,
 				37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */,
