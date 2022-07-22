@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372BA3CA288AEF8D006C77A6 /* Detail.storyboard */; };
+		372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */; };
 		37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF72288A8DB200897674 /* AppDelegate.swift */; };
 		37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF74288A8DB200897674 /* SceneDelegate.swift */; };
 		37DACF77288A8DB200897674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF76288A8DB200897674 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372BA3CA288AEF8D006C77A6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		37DACF6F288A8DB200897674 /* Tamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DACF72288A8DB200897674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DACF74288A8DB200897674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372BA3C9288AEF65006C77A6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				372BA3CA288AEF8D006C77A6 /* Detail.storyboard */,
+				372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		37DACF66288A8DB200897674 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +77,7 @@
 		37DACF71288A8DB200897674 /* Tamagochi */ = {
 			isa = PBXGroup;
 			children = (
+				372BA3C9288AEF65006C77A6 /* Detail */,
 				37DACF86288A914100897674 /* Intro */,
 				37DACF72288A8DB200897674 /* AppDelegate.swift */,
 				37DACF74288A8DB200897674 /* SceneDelegate.swift */,
@@ -148,6 +162,7 @@
 				37DACF7F288A8DB300897674 /* LaunchScreen.storyboard in Resources */,
 				37DACF7C288A8DB300897674 /* Assets.xcassets in Resources */,
 				37DACF7A288A8DB200897674 /* Intro.storyboard in Resources */,
+				372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +180,7 @@
 				37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */,
 				37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */,
 				37DACF8E288ABDD200897674 /* TamagochiInfo.swift in Sources */,
+				372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

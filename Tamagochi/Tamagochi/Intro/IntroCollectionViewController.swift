@@ -53,6 +53,15 @@ class IntroCollectionViewController: UICollectionViewController {
 
         }
         return cell
-  
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("clicked")
+        
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.modalPresentationStyle = .formSheet
+        self.present(vc, animated: true)
+    }
+    
 }
