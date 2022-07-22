@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--다마고치 선택하기-->
+        <!--Intro Collection View Controller-->
         <scene sceneID="u6j-UZ-M2f">
             <objects>
                 <collectionViewController id="Gu5-Ay-3bx" customClass="IntroCollectionViewController" customModule="Tamagochi" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="Gu5-Ay-3bx" id="24x-s2-gQD"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="다마고치 선택하기" id="rUN-Kt-db8"/>
+                    <navigationItem key="navigationItem" id="rUN-Kt-db8"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hch-bb-6Hq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
