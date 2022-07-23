@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37109C10288C405700AF8B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37109C0F288C405700AF8B62 /* Main.storyboard */; };
+		37109C12288C408100AF8B62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C11288C408100AF8B62 /* MainViewController.swift */; };
 		372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372BA3CA288AEF8D006C77A6 /* Detail.storyboard */; };
 		372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */; };
 		37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF72288A8DB200897674 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37109C0F288C405700AF8B62 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		37109C11288C408100AF8B62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372BA3CA288AEF8D006C77A6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		37DACF6F288A8DB200897674 /* Tamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37109C0E288C3ED300AF8B62 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				37109C0F288C405700AF8B62 /* Main.storyboard */,
+				37109C11288C408100AF8B62 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		372BA3C9288AEF65006C77A6 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,7 @@
 		37DACF71288A8DB200897674 /* Tamagochi */ = {
 			isa = PBXGroup;
 			children = (
+				37109C0E288C3ED300AF8B62 /* Main */,
 				372BA3C9288AEF65006C77A6 /* Detail */,
 				37DACF86288A914100897674 /* Intro */,
 				37DACF72288A8DB200897674 /* AppDelegate.swift */,
@@ -160,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37DACF7F288A8DB300897674 /* LaunchScreen.storyboard in Resources */,
+				37109C10288C405700AF8B62 /* Main.storyboard in Resources */,
 				37DACF7C288A8DB300897674 /* Assets.xcassets in Resources */,
 				37DACF7A288A8DB200897674 /* Intro.storyboard in Resources */,
 				372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */,
@@ -179,6 +194,7 @@
 				37DACF8C288ABDC200897674 /* Tamagochi.swift in Sources */,
 				37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */,
 				37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */,
+				37109C12288C408100AF8B62 /* MainViewController.swift in Sources */,
 				37DACF8E288ABDD200897674 /* TamagochiInfo.swift in Sources */,
 				372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */,
 			);

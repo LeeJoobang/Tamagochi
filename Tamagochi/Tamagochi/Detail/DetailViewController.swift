@@ -46,10 +46,19 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func cancelBackButton(_ sender: UIButton) {
+        print("clicked - cancel")
 
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func startMainButton(_ sender: UIButton) {
+        print("clicked")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+        vc.modalTransitionStyle = .partialCurl
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
     
     
 }
