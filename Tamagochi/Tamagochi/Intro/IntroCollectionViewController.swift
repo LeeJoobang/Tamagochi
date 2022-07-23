@@ -57,13 +57,7 @@ class IntroCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.modalPresentationStyle = .formSheet
-        
-        // 2. 값전달 - vc 가 가지고 있는 프로퍼티에 데이터 추가
-
         vc.tamaData = tamagochiList.tamagochi[indexPath.row]
-//        vc.movieData = movieData.movie[indexPath.row]
-        // 값을 받아와 표시가 가능하게 된다.
-        
         self.present(vc, animated: true)
     }
     
