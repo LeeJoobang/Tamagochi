@@ -15,13 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpL-kW-VcJ">
+                                <rect key="frame" x="40" y="214" width="334" height="478"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="PpL-kW-VcJ" secondAttribute="bottom" constant="170" id="ILQ-d3-ofw"/>
+                            <constraint firstAttribute="trailing" secondItem="PpL-kW-VcJ" secondAttribute="trailing" constant="40" id="XwL-JD-Pq6"/>
+                            <constraint firstItem="PpL-kW-VcJ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="40" id="dtk-As-Xpz"/>
+                            <constraint firstItem="PpL-kW-VcJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="170" id="iKD-pM-6Z1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="PpL-kW-VcJ" id="fD0-m4-r5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101" y="92"/>
+            <point key="canvasLocation" x="100.00000000000001" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>
