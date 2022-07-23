@@ -15,5 +15,6 @@ class IntroCollectionViewCell: UICollectionViewCell {
         tamaName.layer.borderWidth = 0.5
         tamaName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         tamaName.layer.cornerRadius = 5
+        tamaImageView.image = UIImage(named: data.image)
     }
 }

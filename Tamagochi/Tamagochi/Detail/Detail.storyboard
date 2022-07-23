@@ -18,7 +18,35 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpL-kW-VcJ">
                                 <rect key="frame" x="40" y="214" width="334" height="478"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWu-RX-WSJ">
+                                        <rect key="frame" x="92" y="40" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Wxt-gq-wOH"/>
+                                            <constraint firstAttribute="height" constant="150" id="qTp-bl-dsN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4k-oN-rn0">
+                                        <rect key="frame" x="146" y="220" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42d-GX-5rz">
+                                        <rect key="frame" x="142" y="277" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="CWu-RX-WSJ" firstAttribute="top" secondItem="PpL-kW-VcJ" secondAttribute="top" constant="40" id="B9K-ZV-6PN"/>
+                                    <constraint firstItem="U4k-oN-rn0" firstAttribute="top" secondItem="CWu-RX-WSJ" secondAttribute="bottom" constant="30" id="CKA-7w-0K8"/>
+                                    <constraint firstItem="CWu-RX-WSJ" firstAttribute="centerX" secondItem="PpL-kW-VcJ" secondAttribute="centerX" id="Kkp-r3-Z7N"/>
+                                    <constraint firstItem="U4k-oN-rn0" firstAttribute="centerX" secondItem="PpL-kW-VcJ" secondAttribute="centerX" id="cVN-Jz-B3h"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -32,6 +60,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="PpL-kW-VcJ" id="fD0-m4-r5Y"/>
+                        <outlet property="tamaImage" destination="CWu-RX-WSJ" id="fxi-95-kFB"/>
+                        <outlet property="tamaName" destination="U4k-oN-rn0" id="PlT-x0-Xnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
