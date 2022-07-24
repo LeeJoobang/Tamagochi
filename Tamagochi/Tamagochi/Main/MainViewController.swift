@@ -51,18 +51,46 @@ class MainViewController: UIViewController {
     
     func count(_ sender: UIButton, textField: UITextField, count: Int) -> Int {
         var count = Int()
+        guard let tmpButton = sender.currentTitle else { return 0 }
         guard let tmp = textField.text else { return 0 }
-        if tmp == ""{
-            count += 1
-            return count
-        } else {
-            count += Int(tmp) ?? 0
-            return count
+
+        if tmpButton == "밥주기"{
+            if tmp == "" {
+                count += 1
+                return count
+            } else {
+                if Int(tmp) ?? 0 > 99 {
+                    return count
+                } else {
+                    count += Int(tmp) ?? 0
+                    return count
+                }
+            }
         }
+        
+        if tmpButton == "물주기"{
+            if tmp == "" {
+                count += 1
+                return count
+            } else {
+                if Int(tmp) ?? 0 > 49 {
+                    return count
+                } else {
+                    count += Int(tmp) ?? 0
+                    return count
+                }
+            }
+        }
+        return count
     }
     
     func calculateLV() -> Int{
-        levelCount = (riceCount / 5) + (waterCount / 2)
+        let calculateTmp = (riceCount / 5) + (waterCount / 2)
+        if calculateTmp >= 10 {
+            levelCount = 10
+        } else {
+            levelCount = calculateTmp
+        }
         return levelCount
     }
     
@@ -71,9 +99,6 @@ class MainViewController: UIViewController {
             return
         }
         let startNumber = tamaData.image.prefix(1)
-        print(startNumber)
-
-        
         switch level {
         case 1: tamaImageView.image = UIImage(named: "\(startNumber)-\(1)")
         case 2: tamaImageView.image = UIImage(named: "\(startNumber)-\(2)")
@@ -85,27 +110,30 @@ class MainViewController: UIViewController {
         case 8: tamaImageView.image = UIImage(named: "\(startNumber)-\(8)")
         case 9: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
         case 10: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
-        default: ""
+        default:
+            "해당없음"
         }
     }
     
     @IBAction func addRiceButtonClicked(_ sender: UIButton) {
         riceCount += count(sender, textField: riceTextField, count: riceCount)
         calculateLV()
+        bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
         changeImage(level: levelCount)
-
-        print(riceCount)
+        
     }
     
     @IBAction func addWaterButtonClicked(_ sender: UIButton) {
-        waterCount += count(sender, textField: riceTextField, count: riceCount)
+        waterCount += count(sender, textField: waterTextField, count: waterCount)
         calculateLV()
+        bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
-        print(waterCount)
+        changeImage(level: levelCount)
+        
     }
     
     
     
-   
+    
 }
