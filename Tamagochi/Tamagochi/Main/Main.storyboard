@@ -26,13 +26,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmE-Tg-BL9">
-                                <rect key="frame" x="186.5" y="608" width="41.5" height="20.5"/>
+                                <rect key="frame" x="186.5" y="594" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z3W-d0-Tm5">
-                                <rect key="frame" x="63" y="658.5" width="288" height="40"/>
+                                <rect key="frame" x="63" y="644.5" width="288" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-D7-VKJ">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
@@ -46,6 +46,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="addRiceButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zoI-Mf-u2Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -54,7 +57,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="veE-ux-FfF">
-                                <rect key="frame" x="63" y="710.5" width="288" height="40"/>
+                                <rect key="frame" x="63" y="696.5" width="288" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZ6-pm-g5A">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
@@ -68,6 +71,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="addWaterButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OUs-WG-EAq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -94,7 +100,7 @@
                             <constraint firstItem="1W2-mo-j6N" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Bpz-F4-HVw"/>
                             <constraint firstItem="1W2-mo-j6N" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.2" id="G2R-B3-Whc"/>
                             <constraint firstItem="1W2-mo-j6N" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IeL-8p-mWI"/>
-                            <constraint firstItem="hmE-Tg-BL9" firstAttribute="top" secondItem="WEe-Cv-ZKG" secondAttribute="bottom" constant="30" id="KVG-GS-B60"/>
+                            <constraint firstItem="hmE-Tg-BL9" firstAttribute="top" secondItem="WEe-Cv-ZKG" secondAttribute="bottom" constant="16" id="KVG-GS-B60"/>
                             <constraint firstItem="hkg-8k-Fhr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NBb-w3-wsC"/>
                             <constraint firstItem="WEe-Cv-ZKG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="OBj-Bt-pnW"/>
                             <constraint firstItem="veE-ux-FfF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QS4-B1-rPf"/>
@@ -112,9 +118,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="YOq-ua-g5q"/>
                     <connections>
+                        <outlet property="addRiceButton" destination="8iX-YZ-tjU" id="Pq4-T1-yFE"/>
+                        <outlet property="addWaterButton" destination="z8J-t2-wVr" id="30z-kA-rxs"/>
                         <outlet property="bubbleImageView" destination="hkg-8k-Fhr" id="msT-jW-6xH"/>
                         <outlet property="bubbleLabel" destination="2mx-AR-i1H" id="oaL-Ir-miV"/>
+                        <outlet property="riceTextField" destination="gbC-D7-VKJ" id="Qb7-A5-qft"/>
                         <outlet property="tamaImageView" destination="1W2-mo-j6N" id="C8s-7t-kDd"/>
+                        <outlet property="tamaNameLabel" destination="WEe-Cv-ZKG" id="5OP-Gr-YUv"/>
+                        <outlet property="tamaStatusLabel" destination="hmE-Tg-BL9" id="hpL-f7-noy"/>
+                        <outlet property="waterTextField" destination="uZ6-pm-g5A" id="cNq-Pm-zJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
