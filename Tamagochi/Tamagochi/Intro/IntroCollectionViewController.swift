@@ -37,7 +37,6 @@ class IntroCollectionViewController: UICollectionViewController {
         
         if indexPath.row <= 2 {
             let data = tamagochiList.tamagochi[indexPath.row]
-//            let count = indexPath.row + 1
             cell.configureInfo(data: data)
         } else {
             cell.tamaImageView.image = UIImage(named: "noImage")
@@ -56,8 +55,8 @@ class IntroCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.modalPresentationStyle = .formSheet
         vc.tamaData = tamagochiList.tamagochi[indexPath.row]
+        vc.modalPresentationStyle = .formSheet
         self.present(vc, animated: true)
     }
     
