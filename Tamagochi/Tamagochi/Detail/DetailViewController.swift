@@ -53,6 +53,7 @@ class DetailViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         let nav = UINavigationController(rootViewController: vc)
+        vc.tamaData = tamaData
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }
