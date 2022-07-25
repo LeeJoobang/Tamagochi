@@ -33,7 +33,12 @@ class MainViewController: UIViewController{
     
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        layout(data: tamaData!)
+        guard let unwrappTamaData = tamaData else {
+            return
+        }
+        
+        layout(data: unwrappTamaData)
+
     }
     
     @objc
@@ -74,6 +79,7 @@ class MainViewController: UIViewController{
         tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
     }
     
+   
     //MARK: 카운트 메서드
     func count(_ sender: UIButton, textField: UITextField, count: Int) -> Int {
         var count = Int()

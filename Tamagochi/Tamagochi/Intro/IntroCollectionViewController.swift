@@ -59,5 +59,7 @@ class IntroCollectionViewController: UICollectionViewController {
             vc.modalPresentationStyle = .formSheet
             self.present(vc, animated: true)
         }
+        
     }
 }
+
