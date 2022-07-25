@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Title-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="Y6W-OH-hqX" customClass="MainViewController" customModule="Tamagochi" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,7 +116,7 @@
                             <constraint firstItem="Z3W-d0-Tm5" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ziD-4i-nZ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YOq-ua-g5q"/>
+                    <navigationItem key="navigationItem" title="Title" id="swW-r8-p5T"/>
                     <connections>
                         <outlet property="addRiceButton" destination="8iX-YZ-tjU" id="Pq4-T1-yFE"/>
                         <outlet property="addWaterButton" destination="z8J-t2-wVr" id="30z-kA-rxs"/>

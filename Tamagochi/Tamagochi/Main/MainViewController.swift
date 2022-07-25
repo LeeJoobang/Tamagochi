@@ -22,16 +22,30 @@ class MainViewController: UIViewController{
     ///시작화면으로 돌아가는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.navigationItem.title = "주방의 다마고치"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         layout(data: tamaData!)
-        riceTextField.keyboardType = .numberPad
-        waterTextField.keyboardType = .numberPad
+    }
+    
+    @objc
+    func settingInformation(_ sender: UIButton){
+        let sb = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
     }
     
     //MARK: 레이아웃
     func layout(data: Tamagochi){
-        print(data)
+        riceTextField.keyboardType = .numberPad
+        waterTextField.keyboardType = .numberPad
         view.backgroundColor = .white
-        self.navigationItem.title = "주방의 다마고치"
+//        let rightButton = UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal)
+        
+        
         bubbleImageView.image = UIImage(named: "bubble")
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         bubbleLabel.font = .boldSystemFont(ofSize: 13)
@@ -137,6 +151,7 @@ class MainViewController: UIViewController{
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
         changeImage(level: levelCount)
-        
     }
+    
+    
 }

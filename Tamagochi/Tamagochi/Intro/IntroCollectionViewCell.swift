@@ -7,6 +7,9 @@ class IntroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tamaImageView: UIImageView!
     @IBOutlet weak var tamaName: UILabel!
     
+    
+    /// 셀의 데이터를 넣어주는 역할 (opt + cmd + /)
+    /// - Parameter data: 다마고치 정보
     func configureInfo(data: Tamagochi){
         tamaName.text = data.name
         tamaName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
