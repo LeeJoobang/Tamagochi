@@ -11,17 +11,23 @@ class MainViewController: UIViewController{
     @IBOutlet weak var waterTextField: UITextField!
     @IBOutlet weak var addRiceButton: UIButton!
     @IBOutlet weak var addWaterButton: UIButton!
-    
+
     var tamaData: Tamagochi?
     var levelCount = 0
     var riceCount = 0
     var waterCount = 0
     
+    //MARK: 뷰 컨트롤로의 생명주기
+    
+    ///시작화면으로 돌아가는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
         layout(data: tamaData!)
+        riceTextField.keyboardType = .numberPad
+        waterTextField.keyboardType = .numberPad
     }
     
+    //MARK: 레이아웃
     func layout(data: Tamagochi){
         print(data)
         view.backgroundColor = .white
@@ -49,6 +55,7 @@ class MainViewController: UIViewController{
         tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
     }
     
+    //MARK: 카운트 메서드
     func count(_ sender: UIButton, textField: UITextField, count: Int) -> Int {
         var count = Int()
         guard let tmpButton = sender.currentTitle else { return 0 }
