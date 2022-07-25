@@ -16,14 +16,21 @@ class MainViewController: UIViewController{
     var levelCount = 0
     var riceCount = 0
     var waterCount = 0
+    var currentStatus = ""
     
     //MARK: 뷰 컨트롤로의 생명주기
     
     ///시작화면으로 돌아가는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if TamagochiInfo.userName == "" {
+            self.navigationItem.title = "고래밥의 다마고치"
+        } else {
+            self.navigationItem.title = "\(TamagochiInfo.userName)의 다마고치"
+        }
+        
     
-        self.navigationItem.title = "주방의 다마고치"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         layout(data: tamaData!)
@@ -42,10 +49,7 @@ class MainViewController: UIViewController{
     func layout(data: Tamagochi){
         riceTextField.keyboardType = .numberPad
         waterTextField.keyboardType = .numberPad
-        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-//        let rightButton = UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal)
-        
+        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)        
         
         bubbleImageView.image = UIImage(named: "bubble")
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
@@ -66,7 +70,7 @@ class MainViewController: UIViewController{
         addRiceButton.setTitle("밥주기", for: .normal)
         addWaterButton.setTitle("물주기", for: .normal)
         
-        tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
+        tamaStatusLabel.text = currentStatus
         tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
     }
     
@@ -140,18 +144,27 @@ class MainViewController: UIViewController{
     @IBAction func addRiceButtonClicked(_ sender: UIButton) {
         riceCount += count(sender, textField: riceTextField, count: riceCount)
         levelCount = calculateLV()
+        currentStatus = savedData()
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
-        tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
+        tamaStatusLabel.text = currentStatus
         changeImage(level: levelCount)
-        
     }
     
     @IBAction func addWaterButtonClicked(_ sender: UIButton) {
         waterCount += count(sender, textField: waterTextField, count: waterCount)
         levelCount = calculateLV()
+        currentStatus = savedData()
+
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
-        tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
+        tamaStatusLabel.text = currentStatus
         changeImage(level: levelCount)
+    }
+    
+    func savedData() -> String{
+        UserDefaults.standard.set(levelCount, forKey: "LevelCount")
+        UserDefaults.standard.set(riceCount, forKey: "RiceCount")
+        UserDefaults.standard.set(waterCount, forKey: "WaterCount")
+        return "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
     }
     
     

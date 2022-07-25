@@ -54,6 +54,8 @@ class DetailViewController: UIViewController {
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         let nav = UINavigationController(rootViewController: vc)
         vc.tamaData = tamaData
+        guard let savedName = vc.tamaData?.name else { return }
+        UserDefaults.standard.set(savedName, forKey: "TamagochiName")
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }

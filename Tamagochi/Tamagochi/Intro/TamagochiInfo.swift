@@ -9,4 +9,6 @@ struct TamagochiInfo{
     
     static let statusMessage: [String] = ["조금씩 나아질거야", "너 지금 멋지게 헤어치려고 숨 참는 것부터 하고 있다고 생각해", "걱정도 좀 덜하고", "후회도 좀 덜 하면 좋겠다.", "극심한 슬럼프는 성공의 전단계이다.", "오늘은 좋은 일이 있을거야", "서로 다른 종류의 좋은 날씨만 있을 뿐", "바로 오늘", "모든 건 마음 먹기 나름이다", "약해지지마", "세상은 고통으로 가득하지만, 그것을 극복하는 사람들로도 가득하다.", "고독이 힘이 될 때, 영혼은 길을 잃지 않는다.", "실패는 보다 현명하게 시작할 수 있는 기회다.", "go fo it!", "it's now or never.", "you never know until you try it.", "you can make it!", "Be specific with your words, the deal is in the detail.", "the more you gain by pretending the less you're actually gonna have"]
     
+    static var userName = String()
+    
 }
