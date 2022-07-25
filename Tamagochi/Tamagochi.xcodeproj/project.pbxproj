@@ -11,6 +11,9 @@
 		37109C12288C408100AF8B62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C11288C408100AF8B62 /* MainViewController.swift */; };
 		372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372BA3CA288AEF8D006C77A6 /* Detail.storyboard */; };
 		372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */; };
+		37BD3792288E31F000C12BA2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BD3791288E31F000C12BA2 /* Setting.storyboard */; };
+		37BD3794288E320400C12BA2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD3793288E320400C12BA2 /* SettingTableViewController.swift */; };
+		37BD3796288E321400C12BA2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */; };
 		37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF72288A8DB200897674 /* AppDelegate.swift */; };
 		37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF74288A8DB200897674 /* SceneDelegate.swift */; };
 		37DACF77288A8DB200897674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF76288A8DB200897674 /* ViewController.swift */; };
@@ -28,6 +31,9 @@
 		37109C11288C408100AF8B62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372BA3CA288AEF8D006C77A6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		37BD3791288E31F000C12BA2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		37BD3793288E320400C12BA2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		37DACF6F288A8DB200897674 /* Tamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DACF72288A8DB200897674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DACF74288A8DB200897674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,16 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		37BD378E288E31B600C12BA2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				37BD3791288E31F000C12BA2 /* Setting.storyboard */,
+				37BD3793288E320400C12BA2 /* SettingTableViewController.swift */,
+				37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		37DACF66288A8DB200897674 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +106,7 @@
 		37DACF71288A8DB200897674 /* Tamagochi */ = {
 			isa = PBXGroup;
 			children = (
+				37BD378E288E31B600C12BA2 /* Setting */,
 				37109C0E288C3ED300AF8B62 /* Main */,
 				372BA3C9288AEF65006C77A6 /* Detail */,
 				37DACF86288A914100897674 /* Intro */,
@@ -107,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				37DACF78288A8DB200897674 /* Intro.storyboard */,
-				37DACF87288A916700897674 /* IntroCollectionViewController.swift */,
 				37DACF89288A923300897674 /* IntroCollectionViewCell.swift */,
+				37DACF87288A916700897674 /* IntroCollectionViewController.swift */,
 				37DACF8B288ABDC200897674 /* Tamagochi.swift */,
 				37DACF8D288ABDD200897674 /* TamagochiInfo.swift */,
 			);
@@ -178,6 +195,7 @@
 				37DACF7C288A8DB300897674 /* Assets.xcassets in Resources */,
 				37DACF7A288A8DB200897674 /* Intro.storyboard in Resources */,
 				372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */,
+				37BD3792288E31F000C12BA2 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BD3796288E321400C12BA2 /* SettingTableViewCell.swift in Sources */,
 				37DACF8A288A923300897674 /* IntroCollectionViewCell.swift in Sources */,
 				37DACF77288A8DB200897674 /* ViewController.swift in Sources */,
 				37DACF88288A916700897674 /* IntroCollectionViewController.swift in Sources */,
 				37DACF8C288ABDC200897674 /* Tamagochi.swift in Sources */,
+				37BD3794288E320400C12BA2 /* SettingTableViewController.swift in Sources */,
 				37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */,
 				37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */,
 				37109C12288C408100AF8B62 /* MainViewController.swift in Sources */,
@@ -272,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -326,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -346,6 +366,7 @@
 				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagochi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "이주영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Intro;
@@ -375,6 +396,7 @@
 				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagochi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "이주영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Intro;

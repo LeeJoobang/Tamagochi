@@ -55,8 +55,10 @@ class IntroCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.tamaData = tamagochiList.tamagochi[indexPath.row]
-        vc.modalPresentationStyle = .formSheet
-        self.present(vc, animated: true)
+        if indexPath.row < tamagochiList.tamagochi.count {
+            vc.tamaData = tamagochiList.tamagochi[indexPath.row]
+            vc.modalPresentationStyle = .formSheet
+            self.present(vc, animated: true)
+        }
     }
 }

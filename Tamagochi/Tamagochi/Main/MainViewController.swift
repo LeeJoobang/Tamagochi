@@ -111,13 +111,13 @@ class MainViewController: UIViewController {
         case 9: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
         case 10: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
         default:
-            "해당없음"
+            return 
         }
     }
     
     @IBAction func addRiceButtonClicked(_ sender: UIButton) {
         riceCount += count(sender, textField: riceTextField, count: riceCount)
-        calculateLV()
+        levelCount = calculateLV()
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
         changeImage(level: levelCount)
@@ -126,7 +126,7 @@ class MainViewController: UIViewController {
     
     @IBAction func addWaterButtonClicked(_ sender: UIButton) {
         waterCount += count(sender, textField: waterTextField, count: waterCount)
-        calculateLV()
+        levelCount = calculateLV()
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
         changeImage(level: levelCount)
