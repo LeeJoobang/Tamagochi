@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController{
     
     @IBOutlet weak var bubbleLabel: UILabel!
     @IBOutlet weak var bubbleImageView: UIImageView!
@@ -132,8 +132,4 @@ class MainViewController: UIViewController {
         changeImage(level: levelCount)
         
     }
-    
-    
-    
-    
 }
