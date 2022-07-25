@@ -48,25 +48,15 @@ class SettingTableViewController: UITableViewController {
             
             
         } else if indexPath.row == 2 {
-//            let userDefaultName = UserDefaults.standard.string(forKey: "TamagochiName")
-//            let userDefaultLevel = UserDefaults.standard.string(forKey: "LevelCount")
-//            let userDefaultRice = UserDefaults.standard.string(forKey: "RiceCount")
-//            let userDefaultWater = UserDefaults.standard.string(forKey: "WaterCount")
-//
-//            print(UserDefaults.standard.dictionaryRepresentation().keys)
-//            print("-------------------")
             for key in UserDefaults.standard.dictionaryRepresentation().keys{
                 UserDefaults.standard.removeObject(forKey: key.description)
             }
-//            print(UserDefaults.standard.dictionaryRepresentation().keys)
-
             let sb = UIStoryboard(name: "Intro", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "IntroCollectionViewController") as! IntroCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
             
-
         }
     }
 }
