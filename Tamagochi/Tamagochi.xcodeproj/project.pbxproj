@@ -12,9 +12,11 @@
 		372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372BA3CA288AEF8D006C77A6 /* Detail.storyboard */; };
 		372BA3CD288AEFBB006C77A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */; };
 		3737EE1B288E34B60001EFFC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3737EE1A288E34B60001EFFC /* IQKeyboardManagerSwift */; };
+		3737EE1D288E50810001EFFC /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737EE1C288E50810001EFFC /* SettingTableViewCell.swift */; };
+		3737EE20288E6AD60001EFFC /* ChangeName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3737EE1F288E6AD60001EFFC /* ChangeName.storyboard */; };
+		3737EE22288E6AEC0001EFFC /* ChangeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737EE21288E6AEC0001EFFC /* ChangeName.swift */; };
 		37BD3792288E31F000C12BA2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BD3791288E31F000C12BA2 /* Setting.storyboard */; };
 		37BD3794288E320400C12BA2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD3793288E320400C12BA2 /* SettingTableViewController.swift */; };
-		37BD3796288E321400C12BA2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */; };
 		37DACF73288A8DB200897674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF72288A8DB200897674 /* AppDelegate.swift */; };
 		37DACF75288A8DB200897674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF74288A8DB200897674 /* SceneDelegate.swift */; };
 		37DACF77288A8DB200897674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DACF76288A8DB200897674 /* ViewController.swift */; };
@@ -32,9 +34,11 @@
 		37109C11288C408100AF8B62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372BA3CA288AEF8D006C77A6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		372BA3CC288AEFBB006C77A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3737EE1C288E50810001EFFC /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		3737EE1F288E6AD60001EFFC /* ChangeName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeName.storyboard; sourceTree = "<group>"; };
+		3737EE21288E6AEC0001EFFC /* ChangeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeName.swift; sourceTree = "<group>"; };
 		37BD3791288E31F000C12BA2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		37BD3793288E320400C12BA2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		37DACF6F288A8DB200897674 /* Tamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DACF72288A8DB200897674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DACF74288A8DB200897674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,12 +83,21 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		3737EE1E288E6AB70001EFFC /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				3737EE1F288E6AD60001EFFC /* ChangeName.storyboard */,
+				3737EE21288E6AEC0001EFFC /* ChangeName.swift */,
+			);
+			path = ChangeName;
+			sourceTree = "<group>";
+		};
 		37BD378E288E31B600C12BA2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				37BD3791288E31F000C12BA2 /* Setting.storyboard */,
 				37BD3793288E320400C12BA2 /* SettingTableViewController.swift */,
-				37BD3795288E321400C12BA2 /* SettingTableViewCell.swift */,
+				3737EE1C288E50810001EFFC /* SettingTableViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -108,6 +121,7 @@
 		37DACF71288A8DB200897674 /* Tamagochi */ = {
 			isa = PBXGroup;
 			children = (
+				3737EE1E288E6AB70001EFFC /* ChangeName */,
 				37BD378E288E31B600C12BA2 /* Setting */,
 				37109C0E288C3ED300AF8B62 /* Main */,
 				372BA3C9288AEF65006C77A6 /* Detail */,
@@ -200,6 +214,7 @@
 			files = (
 				37DACF7F288A8DB300897674 /* LaunchScreen.storyboard in Resources */,
 				37109C10288C405700AF8B62 /* Main.storyboard in Resources */,
+				3737EE20288E6AD60001EFFC /* ChangeName.storyboard in Resources */,
 				37DACF7C288A8DB300897674 /* Assets.xcassets in Resources */,
 				37DACF7A288A8DB200897674 /* Intro.storyboard in Resources */,
 				372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */,
@@ -214,8 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37BD3796288E321400C12BA2 /* SettingTableViewCell.swift in Sources */,
+				3737EE1D288E50810001EFFC /* SettingTableViewCell.swift in Sources */,
 				37DACF8A288A923300897674 /* IntroCollectionViewCell.swift in Sources */,
+				3737EE22288E6AEC0001EFFC /* ChangeName.swift in Sources */,
 				37DACF77288A8DB200897674 /* ViewController.swift in Sources */,
 				37DACF88288A916700897674 /* IntroCollectionViewController.swift in Sources */,
 				37DACF8C288ABDC200897674 /* Tamagochi.swift in Sources */,

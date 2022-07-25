@@ -42,7 +42,8 @@ class MainViewController: UIViewController{
     func layout(data: Tamagochi){
         riceTextField.keyboardType = .numberPad
         waterTextField.keyboardType = .numberPad
-        view.backgroundColor = .white
+        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
 //        let rightButton = UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal)
         
         
