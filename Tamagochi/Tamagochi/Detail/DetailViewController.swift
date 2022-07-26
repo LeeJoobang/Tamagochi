@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var tamaImage: UIImageView!
     @IBOutlet weak var tamaNameLabel: UILabel!
@@ -12,7 +12,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     var tamaData: Tamagochi?
-
+    
+    var dismissCallBack: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailViewlayout()
@@ -26,7 +28,7 @@ class DetailViewController: UIViewController {
         backgroundView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         
         tamaImage.image = UIImage(named: tamaData?.image ?? "오류")
-
+        
         tamaNameLabel.text = tamaData?.name
         tamaNameLabel.font = .boldSystemFont(ofSize: 13)
         tamaNameLabel.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
@@ -50,13 +52,16 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func startMainButton(_ sender: UIButton) {
+        dismissCallBack?()
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
-        let nav = UINavigationController(rootViewController: vc)
         vc.tamaData = tamaData
         guard let savedName = vc.tamaData?.name else { return }
         UserDefaults.standard.set(savedName, forKey: "TamagochiName")
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true)
+
+//        let nav = UINavigationController(rootViewController: vc)
+//        self.present(nav, animated: true)
+//        self.navigationController?.pushViewController(nav, animated: true)
     }
 }
+

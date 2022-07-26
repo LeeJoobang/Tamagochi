@@ -1,9 +1,10 @@
 import UIKit
 
 class IntroCollectionViewController: UICollectionViewController {
-
-    var tamagochiList = TamagochiInfo()
     
+    var tamagochiList = TamagochiInfo()
+    var tamaData: Tamagochi?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "다마고치 선택하기"
@@ -23,14 +24,14 @@ class IntroCollectionViewController: UICollectionViewController {
         
         layout.minimumLineSpacing = CGFloat(spacing)
         layout.minimumInteritemSpacing = spacing
-
+        
         collectionView.collectionViewLayout = layout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroCollectionViewCell.identifier, for: indexPath) as! IntroCollectionViewCell
         
@@ -46,7 +47,7 @@ class IntroCollectionViewController: UICollectionViewController {
             cell.tamaName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
             cell.tamaName.layer.cornerRadius = 5
             cell.tamaName.adjustsFontSizeToFitWidth = true
-
+            
         }
         return cell
     }
@@ -57,9 +58,27 @@ class IntroCollectionViewController: UICollectionViewController {
         if indexPath.row < tamagochiList.tamagochi.count {
             vc.tamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
+            vc.dismissCallBack = {
+                vc.dismiss(animated: true) {
+                    
+                }
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+//                //                let nav = UINavigationController(rootViewController: vc)
+//                //                        self.present(nav, animated: true)
+//                self.navigationController?.pushViewController(vc, animated: true)
+                
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+//                let nav = UINavigationController(rootViewController: vc)
+//                vc.tamaData = self.tamaData
+//                guard let savedName = vc.tamaData?.name else { return }
+//                UserDefaults.standard.set(savedName, forKey: "TamagochiName")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             self.present(vc, animated: true)
         }
-        
     }
 }
 

@@ -30,7 +30,6 @@ class MainViewController: UIViewController{
             self.navigationItem.title = "\(TamagochiInfo.userName)의 다마고치"
         }
         
-    
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         guard let unwrappTamaData = tamaData else {
@@ -45,9 +44,10 @@ class MainViewController: UIViewController{
     func settingInformation(_ sender: UIButton){
         let sb = UIStoryboard(name: "Setting", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true)
+//        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(nav, animated: true)
     }
     
     //MARK: 레이아웃
