@@ -36,20 +36,13 @@ class SettingTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "ChangeName", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "ChangeNameViewController") as! ChangeNameViewController
-//            let nav = UINavigationController(rootViewController: vc)
-//            nav.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
-//            self.present(nav, animated: true)
             
         } else if indexPath.row == 1 {
             let sb = UIStoryboard(name: "Intro", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "IntroCollectionViewController") as! IntroCollectionViewController
             self.navigationController?.pushViewController(vc, animated: true)
 
-//            let nav = UINavigationController(rootViewController: vc)
-//            nav.modalPresentationStyle = .fullScreen
-//            self.present(nav, animated: true)
-            
         } else if indexPath.row == 2 {
             for key in UserDefaults.standard.dictionaryRepresentation().keys{
                 UserDefaults.standard.removeObject(forKey: key.description)
@@ -57,10 +50,6 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "Intro", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "IntroCollectionViewController") as! IntroCollectionViewController
             self.navigationController?.pushViewController(vc, animated: true)
-
-//            let nav = UINavigationController(rootViewController: vc)
-//            nav.modalPresentationStyle = .fullScreen
-//            self.present(nav, animated: true)
             
         }
     }

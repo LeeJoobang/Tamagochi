@@ -3,7 +3,6 @@ import UIKit
 class IntroCollectionViewController: UICollectionViewController {
     
     var tamagochiList = TamagochiInfo()
-    var tamaData: Tamagochi?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,25 +55,16 @@ class IntroCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         if indexPath.row < tamagochiList.tamagochi.count {
-            vc.tamaData = tamagochiList.tamagochi[indexPath.row]
+            vc.detailTamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
-            vc.dismissCallBack = {
-                vc.dismiss(animated: true) {
-                    
-                }
-//                let sb = UIStoryboard(name: "Main", bundle: nil)
-//                guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
-//                //                let nav = UINavigationController(rootViewController: vc)
-//                //                        self.present(nav, animated: true)
-//                self.navigationController?.pushViewController(vc, animated: true)
-                
-                
+            vc.dismissCallBack = {                
+                vc.dismiss(animated: true) {}
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
-//                let nav = UINavigationController(rootViewController: vc)
-//                vc.tamaData = self.tamaData
-//                guard let savedName = vc.tamaData?.name else { return }
-//                UserDefaults.standard.set(savedName, forKey: "TamagochiName")
+                let detail = DetailViewController()
+                print(detail.detailTamaData)
+                vc.MainTamaData = detail.detailTamaData
+                vc.currentStatus = "hi"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             self.present(vc, animated: true)

@@ -12,7 +12,7 @@ class MainViewController: UIViewController{
     @IBOutlet weak var addRiceButton: UIButton!
     @IBOutlet weak var addWaterButton: UIButton!
 
-    var tamaData: Tamagochi?
+    var MainTamaData: Tamagochi?
     var levelCount = 0
     var riceCount = 0
     var waterCount = 0
@@ -23,7 +23,9 @@ class MainViewController: UIViewController{
     ///시작화면으로 돌아가는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(currentStatus)
+        print(MainTamaData)
+
         if TamagochiInfo.userName == "" {
             self.navigationItem.title = "고래밥의 다마고치"
         } else {
@@ -32,7 +34,8 @@ class MainViewController: UIViewController{
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        guard let unwrappTamaData = tamaData else {
+        
+        guard let unwrappTamaData = MainTamaData else {
             return
         }
         
@@ -44,10 +47,7 @@ class MainViewController: UIViewController{
     func settingInformation(_ sender: UIButton){
         let sb = UIStoryboard(name: "Setting", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
-//        let nav = UINavigationController(rootViewController: vc)
-//        nav.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
-//        self.present(nav, animated: true)
     }
     
     //MARK: 레이아웃
@@ -127,7 +127,7 @@ class MainViewController: UIViewController{
     }
     
     func changeImage(level: Int) {
-        guard let tamaData = tamaData else {
+        guard let tamaData = MainTamaData else {
             return
         }
         let startNumber = tamaData.image.prefix(1)
@@ -172,6 +172,4 @@ class MainViewController: UIViewController{
         UserDefaults.standard.set(waterCount, forKey: "WaterCount")
         return "LV\(levelCount) + 밥알\(riceCount)개 + 물방울\(waterCount)개"
     }
-    
-    
 }
