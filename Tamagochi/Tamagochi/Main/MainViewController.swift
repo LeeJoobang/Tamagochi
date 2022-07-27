@@ -1,4 +1,5 @@
 import UIKit
+import Toast
 
 class MainViewController: UIViewController{
     
@@ -11,28 +12,43 @@ class MainViewController: UIViewController{
     @IBOutlet weak var waterTextField: UITextField!
     @IBOutlet weak var addRiceButton: UIButton!
     @IBOutlet weak var addWaterButton: UIButton!
-
+    
     static var MainTamaData: Tamagochi?
+    
     var levelCount = 0
     var riceCount = 0
     var waterCount = 0
     var currentStatus = ""
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if TamagochiInfo.userName == "" {
-            self.navigationItem.title = "고래밥의 다마고치"
-        } else {
-            self.navigationItem.title = "\(TamagochiInfo.userName)의 다마고치"
-        }
+        UserDefaults.standard.set(true, forKey: "First")
+        
+        self.navigationItem.title = "고래밥의 다마고치"
+        guard let tmp = UserDefaults.standard.string(forKey: "First") else { return }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
-        guard let unwrappTamaData = MainViewController.MainTamaData else {
-            return
+        if tmp != "1"{
+            guard let unwrappTamaData = MainViewController.MainTamaData else {
+                return
+            }
+            layout(data: unwrappTamaData)
+        } else {
+            layout()
         }
-        layout(data: unwrappTamaData)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let userName = UserDefaults.standard.string(forKey: "UserName") else { return }
+        if userName == "" {
+            self.navigationItem.title = "고래밥의 다마고치"
+        }else {
+            self.navigationItem.title = "\(userName)의 다마고치"
+        }
     }
     
     @objc
@@ -45,7 +61,7 @@ class MainViewController: UIViewController{
     func layout(data: Tamagochi){
         riceTextField.keyboardType = .numberPad
         waterTextField.keyboardType = .numberPad
-        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)        
+        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         bubbleImageView.image = UIImage(named: "bubble")
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
@@ -70,17 +86,47 @@ class MainViewController: UIViewController{
         tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
     }
     
+    func layout(){
+        riceTextField.keyboardType = .numberPad
+        waterTextField.keyboardType = .numberPad
+        view.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
+        bubbleImageView.image = UIImage(named: "bubble")
+        bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
+        bubbleLabel.font = .boldSystemFont(ofSize: 13)
+        bubbleLabel.numberOfLines = 0
+        
+        tamaImageView.image = UIImage(named: "1-1")
+        
+        guard let tamaName = UserDefaults.standard.string(forKey: "TamaName") else { return }
+        tamaNameLabel.text = tamaName
+        tamaNameLabel.font = .boldSystemFont(ofSize: 13)
+        
+        riceTextField.placeholder = "밥주세요"
+        riceTextField.textAlignment = .center
+        
+        waterTextField.placeholder = "물주세요"
+        waterTextField.textAlignment = .center
+        
+        addRiceButton.setTitle("밥주기", for: .normal)
+        addWaterButton.setTitle("물주기", for: .normal)
+        
+        tamaStatusLabel.text = "LV1 + 밥알0개 + 물방울0개"
+        tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
+    }
+    
     func count(_ sender: UIButton, textField: UITextField, count: Int) -> Int {
         var count = Int()
         guard let tmpButton = sender.currentTitle else { return 0 }
         guard let tmp = textField.text else { return 0 }
-
+        
         if tmpButton == "밥주기"{
             if tmp == "" {
                 count += 1
                 return count
             } else {
                 if Int(tmp) ?? 0 > 99 {
+                    view.makeToast("100개 이상 밥을 줄 수 없습니다", duration: 3.0, position: .bottom)
                     return count
                 } else {
                     count += Int(tmp) ?? 0
@@ -95,6 +141,7 @@ class MainViewController: UIViewController{
                 return count
             } else {
                 if Int(tmp) ?? 0 > 49 {
+                    view.makeToast("50개 이상 물을 줄 수 없습니다", duration: 3.0, position: .bottom)
                     return count
                 } else {
                     count += Int(tmp) ?? 0
@@ -117,7 +164,7 @@ class MainViewController: UIViewController{
         case 70..<80: levelCount = 7
         case 80..<90: levelCount = 8
         case 90..<100: levelCount = 9
-        case 100...: levelCount = 100
+        case 100...: levelCount = 10
         default:
             return 0
         }
@@ -125,10 +172,8 @@ class MainViewController: UIViewController{
     }
     
     func changeImage(level: Int) {
-        guard let tamaData = MainViewController.MainTamaData else {
-            return
-        }
-        let startNumber = tamaData.image.prefix(1)
+        guard let tamaImage = UserDefaults.standard.string(forKey: "TamaImage") else { return }
+        let startNumber = tamaImage.prefix(1)
         switch level {
         case 1: tamaImageView.image = UIImage(named: "\(startNumber)-\(1)")
         case 2: tamaImageView.image = UIImage(named: "\(startNumber)-\(2)")
@@ -141,7 +186,7 @@ class MainViewController: UIViewController{
         case 9: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
         case 10: tamaImageView.image = UIImage(named: "\(startNumber)-\(9)")
         default:
-            return 
+            return
         }
     }
     
@@ -149,6 +194,7 @@ class MainViewController: UIViewController{
         riceCount += count(sender, textField: riceTextField, count: riceCount)
         levelCount = calculateLV()
         currentStatus = savedData()
+        
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = currentStatus
         changeImage(level: levelCount)
@@ -158,7 +204,7 @@ class MainViewController: UIViewController{
         waterCount += count(sender, textField: waterTextField, count: waterCount)
         levelCount = calculateLV()
         currentStatus = savedData()
-
+        
         bubbleLabel.text = TamagochiInfo.statusMessage.randomElement()
         tamaStatusLabel.text = currentStatus
         changeImage(level: levelCount)

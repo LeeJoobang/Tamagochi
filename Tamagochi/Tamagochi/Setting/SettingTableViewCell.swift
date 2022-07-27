@@ -17,25 +17,28 @@ class SettingTableViewCell: UITableViewCell {
             
             settingLabel.text = "내 이름 설정하기"
             settingLabel.font = .boldSystemFont(ofSize: 13)
-            
         
-            if TamagochiInfo.userName == "" {
+            guard let userName = UserDefaults.standard.string(forKey: "UserName") else { return }
+            
+            if userName == "" {
                 myNameLabel.text = "고래밥"
             } else {
-                myNameLabel.text = TamagochiInfo.userName
+                myNameLabel.text = userName
             }
-            
             myNameLabel.font = .boldSystemFont(ofSize: 13)
+            
         } else if indexPath == 1 {
+            myNameLabel.text = ""
             settingImageView.image = UIImage(systemName: "moon.fill")
             settingImageView.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
 
             settingLabel.text = "다마고치 변경하기"
             settingLabel.font = .boldSystemFont(ofSize: 13)
         } else if indexPath == 2 {
+            myNameLabel.text = ""
             settingImageView.image = UIImage(systemName: "arrow.clockwise")
             settingImageView.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-    
+            UserDefaults.standard.set(false, forKey: "First")
             settingLabel.text = "데이터 초기화"
             settingLabel.font = .boldSystemFont(ofSize: 13)
         }

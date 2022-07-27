@@ -3,10 +3,11 @@ import UIKit
 class IntroCollectionViewController: UICollectionViewController {
     
     var tamagochiList = TamagochiInfo()
+    static var navigationName = "선택"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "다마고치 선택하기"
+        self.navigationItem.title = "다마고치 \(IntroCollectionViewController.navigationName)하기"
         layout()
     }
     
@@ -57,11 +58,12 @@ class IntroCollectionViewController: UICollectionViewController {
         if indexPath.row < tamagochiList.tamagochi.count {
             DetailViewController.detailTamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
-            vc.dismissCallBack = {
+            vc.dismissCallBack = { [self] in
                 vc.dismiss(animated: true) {}
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
                 MainViewController.MainTamaData = DetailViewController.detailTamaData
+                UserDefaults.standard.set(self.tamagochiList.tamagochi[indexPath.row].image, forKey: "TamaImage")
                 vc.currentStatus = "LV\(vc.levelCount) + 밥알\(vc.riceCount)개 + 물방울\(vc.waterCount)개"
                 self.navigationController?.pushViewController(vc, animated: true)
             }

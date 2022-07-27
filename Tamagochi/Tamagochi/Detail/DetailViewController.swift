@@ -27,8 +27,12 @@ class DetailViewController: UIViewController {
         backgroundView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         
         tamaImage.image = UIImage(named: DetailViewController.detailTamaData?.image ?? "오류")
+        UserDefaults.standard.set(DetailViewController.detailTamaData?.image ?? "오류", forKey: "TamaImage")
+
         
         tamaNameLabel.text = DetailViewController.detailTamaData?.name
+        UserDefaults.standard.set(DetailViewController.detailTamaData?.name ?? "오류", forKey: "TamaName")
+
         tamaNameLabel.font = .boldSystemFont(ofSize: 13)
         tamaNameLabel.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         
@@ -36,6 +40,8 @@ class DetailViewController: UIViewController {
         lineView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         
         tamaInfoLabel.text = DetailViewController.detailTamaData?.information
+        UserDefaults.standard.set(DetailViewController.detailTamaData?.information ?? "오류", forKey: "TamaInformation")
+
         tamaInfoLabel.font = .boldSystemFont(ofSize: 13)
         tamaInfoLabel.textAlignment = .center
         tamaInfoLabel.numberOfLines = 0
@@ -44,8 +50,6 @@ class DetailViewController: UIViewController {
         cancelButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
         startButton.setTitle("시작하기", for: .normal)
         startButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
-        
-      
     }
     
     @IBAction func cancelBackButton(_ sender: UIButton) {

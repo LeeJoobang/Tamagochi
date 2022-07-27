@@ -11,6 +11,10 @@ class ChangeNameViewController: UIViewController {
         self.navigationItem.title = "대장님의 이름 정하기"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonClicked))
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(savedName))
     }
     
@@ -21,8 +25,15 @@ class ChangeNameViewController: UIViewController {
         
     @objc
     func savedName(){
-        TamagochiInfo.userName = self.userNameTextField.text ?? ""
-
-        view.makeToast("\(TamagochiInfo.userName)으로 변경되었습니다.", duration: 3.0, position: .bottom)
+        guard let tmpTextField = self.userNameTextField.text else { return }
+        if tmpTextField.count >= 2 && tmpTextField.count <= 6 {
+            UserDefaults.standard.set(tmpTextField, forKey: "UserName")
+            guard let userName = UserDefaults.standard.string(forKey: "UserName") else { return }
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            view.makeToast("대장 이름 2글자 이상 6글자 이하까지 가능합니다.", duration: 3.0, position: .bottom)
+        }
     }
+    
+    
 }
