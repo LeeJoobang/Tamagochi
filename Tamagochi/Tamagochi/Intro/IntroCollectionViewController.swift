@@ -55,16 +55,14 @@ class IntroCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         if indexPath.row < tamagochiList.tamagochi.count {
-            vc.detailTamaData = tamagochiList.tamagochi[indexPath.row]
+            DetailViewController.detailTamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
-            vc.dismissCallBack = {                
+            vc.dismissCallBack = {
                 vc.dismiss(animated: true) {}
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
-                let detail = DetailViewController()
-                print(detail.detailTamaData)
-                vc.MainTamaData = detail.detailTamaData
-                vc.currentStatus = "hi"
+                MainViewController.MainTamaData = DetailViewController.detailTamaData
+                vc.currentStatus = "LV\(vc.levelCount) + 밥알\(vc.riceCount)개 + 물방울\(vc.waterCount)개"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             self.present(vc, animated: true)

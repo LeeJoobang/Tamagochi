@@ -22,6 +22,7 @@ class ChangeNameViewController: UIViewController {
     @objc
     func savedName(){
         TamagochiInfo.userName = self.userNameTextField.text ?? ""
+
         view.makeToast("\(TamagochiInfo.userName)으로 변경되었습니다.", duration: 3.0, position: .bottom)
     }
 }

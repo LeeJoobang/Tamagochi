@@ -12,20 +12,14 @@ class MainViewController: UIViewController{
     @IBOutlet weak var addRiceButton: UIButton!
     @IBOutlet weak var addWaterButton: UIButton!
 
-    var MainTamaData: Tamagochi?
+    static var MainTamaData: Tamagochi?
     var levelCount = 0
     var riceCount = 0
     var waterCount = 0
     var currentStatus = ""
     
-    //MARK: 뷰 컨트롤로의 생명주기
-    
-    ///시작화면으로 돌아가는 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentStatus)
-        print(MainTamaData)
-
         if TamagochiInfo.userName == "" {
             self.navigationItem.title = "고래밥의 다마고치"
         } else {
@@ -35,12 +29,10 @@ class MainViewController: UIViewController{
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingInformation))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
-        guard let unwrappTamaData = MainTamaData else {
+        guard let unwrappTamaData = MainViewController.MainTamaData else {
             return
         }
-        
         layout(data: unwrappTamaData)
-
     }
     
     @objc
@@ -50,7 +42,6 @@ class MainViewController: UIViewController{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //MARK: 레이아웃
     func layout(data: Tamagochi){
         riceTextField.keyboardType = .numberPad
         waterTextField.keyboardType = .numberPad
@@ -79,8 +70,6 @@ class MainViewController: UIViewController{
         tamaStatusLabel.font = .boldSystemFont(ofSize: 13)
     }
     
-   
-    //MARK: 카운트 메서드
     func count(_ sender: UIButton, textField: UITextField, count: Int) -> Int {
         var count = Int()
         guard let tmpButton = sender.currentTitle else { return 0 }
@@ -118,16 +107,25 @@ class MainViewController: UIViewController{
     
     func calculateLV() -> Int{
         let calculateTmp = (riceCount / 5) + (waterCount / 2)
-        if calculateTmp >= 10 {
-            levelCount = 10
-        } else {
-            levelCount = calculateTmp
+        switch calculateTmp{
+        case 0..<20: levelCount = 1
+        case 20..<30: levelCount = 2
+        case 30..<40: levelCount = 3
+        case 40..<50: levelCount = 4
+        case 50..<60: levelCount = 5
+        case 60..<70: levelCount = 6
+        case 70..<80: levelCount = 7
+        case 80..<90: levelCount = 8
+        case 90..<100: levelCount = 9
+        case 100...: levelCount = 100
+        default:
+            return 0
         }
         return levelCount
     }
     
     func changeImage(level: Int) {
-        guard let tamaData = MainTamaData else {
+        guard let tamaData = MainViewController.MainTamaData else {
             return
         }
         let startNumber = tamaData.image.prefix(1)
