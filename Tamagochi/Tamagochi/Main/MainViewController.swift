@@ -26,6 +26,7 @@ class MainViewController: UIViewController{
         super.viewDidLoad()
         UserDefaults.standard.set(true, forKey: "First")
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "고래밥의 다마고치"
         guard let tmp = UserDefaults.standard.string(forKey: "First") else { return }
         

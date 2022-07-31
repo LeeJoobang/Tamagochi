@@ -7,9 +7,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tamaNameLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var tamaInfoLabel: UILabel!
-    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+
+    
     
     static var detailTamaData: Tamagochi?
     var dismissCallBack: (() -> Void)?

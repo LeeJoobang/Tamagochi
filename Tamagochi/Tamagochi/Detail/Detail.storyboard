@@ -39,8 +39,8 @@
                                             <constraint firstAttribute="height" constant="1" id="uSY-e0-kpj"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qca-Js-rey">
-                                        <rect key="frame" x="40" y="201.5" width="254" height="167.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qca-Js-rey">
+                                        <rect key="frame" x="40" y="201.5" width="254" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                     <constraint firstItem="FUl-pD-lPA" firstAttribute="leading" secondItem="PpL-kW-VcJ" secondAttribute="leading" id="bfi-I4-vMl"/>
                                     <constraint firstAttribute="bottom" secondItem="FUl-pD-lPA" secondAttribute="bottom" id="bqE-kV-1Ac"/>
                                     <constraint firstItem="U4k-oN-rn0" firstAttribute="centerX" secondItem="PpL-kW-VcJ" secondAttribute="centerX" id="cVN-Jz-B3h"/>
-                                    <constraint firstItem="qca-Js-rey" firstAttribute="height" secondItem="PpL-kW-VcJ" secondAttribute="height" multiplier="0.35" id="fsR-Zm-JWg"/>
+                                    <constraint firstItem="qca-Js-rey" firstAttribute="height" relation="lessThanOrEqual" secondItem="PpL-kW-VcJ" secondAttribute="height" multiplier="0.35" id="fsR-Zm-JWg"/>
                                     <constraint firstItem="Ql2-j0-aQ3" firstAttribute="leading" secondItem="PpL-kW-VcJ" secondAttribute="leading" constant="40" id="iwm-NK-nzD"/>
                                     <constraint firstItem="Ql2-j0-aQ3" firstAttribute="top" secondItem="U4k-oN-rn0" secondAttribute="bottom" constant="12" id="pFH-1F-7wr"/>
                                     <constraint firstItem="XrQ-wJ-N0Y" firstAttribute="height" secondItem="PpL-kW-VcJ" secondAttribute="height" multiplier="0.1" id="shz-3g-u0j"/>
