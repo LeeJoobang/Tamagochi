@@ -4,7 +4,7 @@ import Toast
 class ChangeNameViewController: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
-    
+    static let identifier = "ChangeNameViewController"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
