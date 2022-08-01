@@ -4,7 +4,6 @@ class IntroCollectionViewController: UICollectionViewController {
     
     var tamagochiList = TamagochiInfo()
     static var navigationName = "선택"
-    static let identifier = "IntroCollectionViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class IntroCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroCollectionViewCell.identifier, for: indexPath) as! IntroCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroCollectionViewCell.reuseIdentifier, for: indexPath) as! IntroCollectionViewCell
         
         if indexPath.row <= 2 {
             let data = tamagochiList.tamagochi[indexPath.row]
@@ -55,14 +54,14 @@ class IntroCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as! DetailViewController
         if indexPath.row < tamagochiList.tamagochi.count {
             DetailViewController.detailTamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
             vc.dismissCallBack = { [self] in
                 vc.dismiss(animated: true) {}
                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+                guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else { return }
                 MainViewController.MainTamaData = DetailViewController.detailTamaData
                 UserDefaults.standard.set(self.tamagochiList.tamagochi[indexPath.row].image, forKey: "TamaImage")
                 vc.currentStatus = "LV\(vc.levelCount) + 밥알\(vc.riceCount)개 + 물방울\(vc.waterCount)개"

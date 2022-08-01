@@ -10,9 +10,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    static let identifier = "DetailViewController"
-
-    
     static var detailTamaData: Tamagochi?
     var dismissCallBack: (() -> Void)?
     
@@ -44,9 +41,11 @@ class DetailViewController: UIViewController {
         tamaInfoLabel.text = DetailViewController.detailTamaData?.information
         UserDefaults.standard.set(DetailViewController.detailTamaData?.information ?? "오류", forKey: "TamaInformation")
 
-        tamaInfoLabel.font = .boldSystemFont(ofSize: 13)
         tamaInfoLabel.textAlignment = .center
+        tamaInfoLabel.lineBreakMode = .byWordWrapping
         tamaInfoLabel.numberOfLines = 0
+        tamaInfoLabel.font = .boldSystemFont(ofSize: 13)
+        tamaInfoLabel.sizeToFit()
         
         cancelButton.setTitle("취소", for: .normal)
         cancelButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)

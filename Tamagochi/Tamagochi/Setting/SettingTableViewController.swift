@@ -2,8 +2,6 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
-    static let identifier = "SettingTableViewController"
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,10 +25,10 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier, for: indexPath) as? SettingTableViewCell
         cell?.configureCell(indexPath: indexPath.row)
         cell?.backgroundColor =  UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        return cell ?? tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier)!
+        return cell ?? tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier)!
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -40,14 +38,14 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "ChangeName", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: ChangeNameViewController.identifier) as! ChangeNameViewController
+            let vc = sb.instantiateViewController(withIdentifier: ChangeNameViewController.reuseIdentifier) as! ChangeNameViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             let sb = UIStoryboard(name: "Intro", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: IntroCollectionViewController.identifier) as! IntroCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: IntroCollectionViewController.reuseIdentifier) as! IntroCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             sceneDelegate?.window?.rootViewController = nav
             sceneDelegate?.window?.makeKeyAndVisible()
@@ -61,7 +59,7 @@ class SettingTableViewController: UITableViewController {
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             let sb = UIStoryboard(name: "Intro", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: IntroCollectionViewController.identifier) as! IntroCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: IntroCollectionViewController.reuseIdentifier) as! IntroCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             sceneDelegate?.window?.rootViewController = nav
             sceneDelegate?.window?.makeKeyAndVisible()

@@ -14,7 +14,6 @@ class MainViewController: UIViewController{
     @IBOutlet weak var addWaterButton: UIButton!
     
     static var MainTamaData: Tamagochi?
-    static let identifier = "MainViewController"
     
     var levelCount = 0
     var riceCount = 0
@@ -56,7 +55,7 @@ class MainViewController: UIViewController{
     @objc
     func settingInformation(_ sender: UIButton){
         let sb = UIStoryboard(name: "Setting", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as! SettingTableViewController
+        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.reuseIdentifier) as! SettingTableViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

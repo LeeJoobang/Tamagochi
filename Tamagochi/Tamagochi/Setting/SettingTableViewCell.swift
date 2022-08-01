@@ -5,7 +5,7 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet weak var settingImageView: UIImageView!
     @IBOutlet weak var settingLabel: UILabel!
     @IBOutlet weak var myNameLabel: UILabel!
-    static let identifier = "SettingTableViewCell"
+
     override class func awakeFromNib() {
     }
     

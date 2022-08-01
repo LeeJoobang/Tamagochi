@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370B16E428980DA50000CD58 /* ReusavleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B16E328980DA50000CD58 /* ReusavleViewProtocol.swift */; };
 		37109C10288C405700AF8B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37109C0F288C405700AF8B62 /* Main.storyboard */; };
 		37109C12288C408100AF8B62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C11288C408100AF8B62 /* MainViewController.swift */; };
 		372BA3CB288AEF8D006C77A6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372BA3CA288AEF8D006C77A6 /* Detail.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370B16E328980DA50000CD58 /* ReusavleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusavleViewProtocol.swift; sourceTree = "<group>"; };
 		37109C0F288C405700AF8B62 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		37109C11288C408100AF8B62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		372BA3CA288AEF8D006C77A6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370B16E228980D8D0000CD58 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				370B16E328980DA50000CD58 /* ReusavleViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		37109C0E288C3ED300AF8B62 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		37DACF71288A8DB200897674 /* Tamagochi */ = {
 			isa = PBXGroup;
 			children = (
+				370B16E228980D8D0000CD58 /* Protocol */,
 				3737EE1E288E6AB70001EFFC /* ChangeName */,
 				37BD378E288E31B600C12BA2 /* Setting */,
 				37109C0E288C3ED300AF8B62 /* Main */,
@@ -236,6 +247,7 @@
 				3737EE1D288E50810001EFFC /* SettingTableViewCell.swift in Sources */,
 				37DACF8A288A923300897674 /* IntroCollectionViewCell.swift in Sources */,
 				37DACF77288A8DB200897674 /* ViewController.swift in Sources */,
+				370B16E428980DA50000CD58 /* ReusavleViewProtocol.swift in Sources */,
 				3737EE24288E6B5A0001EFFC /* ChangeNameViewController.swift in Sources */,
 				37DACF88288A916700897674 /* IntroCollectionViewController.swift in Sources */,
 				37DACF8C288ABDC200897674 /* Tamagochi.swift in Sources */,

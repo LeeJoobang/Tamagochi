@@ -1,7 +1,6 @@
 import UIKit
 
 class IntroCollectionViewCell: UICollectionViewCell {
-    static let identifier = "IntroCollectionViewCell"
     
     @IBOutlet weak var tamaBackgroundView: UIView!
     @IBOutlet weak var tamaImageView: UIImageView!
