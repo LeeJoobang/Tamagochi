@@ -154,20 +154,14 @@ class MainViewController: UIViewController{
     }
     
     func calculateLV() -> Int{
-        let calculateTmp = (riceCount / 5) + (waterCount / 2)
-        switch calculateTmp{
-        case 0..<20: levelCount = 1
-        case 20..<30: levelCount = 2
-        case 30..<40: levelCount = 3
-        case 40..<50: levelCount = 4
-        case 50..<60: levelCount = 5
-        case 60..<70: levelCount = 6
-        case 70..<80: levelCount = 7
-        case 80..<90: levelCount = 8
-        case 90..<100: levelCount = 9
-        case 100...: levelCount = 10
-        default:
-            return 0
+        let calculateTmp = ((riceCount / 5) + (waterCount / 2)) / 10
+        
+        if calculateTmp >= 0 && calculateTmp < 2 {
+            levelCount = 1
+        } else if calculateTmp >= 10 {
+            levelCount = 10
+        } else {
+            levelCount = calculateTmp
         }
         return levelCount
     }
