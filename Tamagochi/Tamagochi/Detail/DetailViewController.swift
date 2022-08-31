@@ -59,6 +59,8 @@ class DetailViewController: UIViewController {
     
     @IBAction func startMainButton(_ sender: UIButton) {
         dismissCallBack?()
+   
+        
     }
 }
 

@@ -39,6 +39,7 @@ class SettingTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "ChangeName", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: ChangeNameViewController.reuseIdentifier) as! ChangeNameViewController
+//            print(self.navigationController?.viewControllers)
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {

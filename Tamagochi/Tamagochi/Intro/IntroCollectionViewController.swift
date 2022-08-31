@@ -58,6 +58,7 @@ class IntroCollectionViewController: UICollectionViewController {
         if indexPath.row < tamagochiList.tamagochi.count {
             DetailViewController.detailTamaData = tamagochiList.tamagochi[indexPath.row]
             vc.modalPresentationStyle = .formSheet
+            
             vc.dismissCallBack = { [self] in
                 vc.dismiss(animated: true) {}
                 let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -67,8 +68,10 @@ class IntroCollectionViewController: UICollectionViewController {
                 vc.currentStatus = "LV\(vc.levelCount) + 밥알\(vc.riceCount)개 + 물방울\(vc.waterCount)개"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+            
             self.present(vc, animated: true)
         }
     }
 }
+
 

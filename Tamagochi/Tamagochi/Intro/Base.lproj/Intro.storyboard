@@ -76,7 +76,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hch-bb-6Hq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="108"/>
+            <point key="canvasLocation" x="1925.5999999999999" y="107.88177339901478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WoN-ru-9rK">
